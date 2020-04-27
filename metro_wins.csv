@@ -1,0 +1,123 @@
+wins,city,state,lat,lon
+74,Greater Los Angeles, CA, 33.8726, -118.2848
+58,New York Metro Area, NY, 40.7128, -74.0060
+46,Greater Boston, MA, 42.3601, -71.0588
+41,San Francisco Bay Area, CA, 37.8272, -122.2913
+40,Toronto, ON, 43.6532, -79.3832
+36,Montreal, QC, 45.5017, -73.5673
+36,Greater Raleigh, NC, 35.7743, -78.6388
+32,Chicago, IL, 41.8781, -87.6298
+26,Greater Philadelphia, PA, 39.9526, -75.1652
+22,Metro Detroit, MI, 42.3314, -83.0458
+21,Pittsburgh, PA, 40.4406, -79.9959
+19,Edmonton, AB, 53.5461, -113.4938
+18,New Haven, CT, 41.3083, -72.9279
+18,Notre Dame, IN, 41.7002, -86.2379
+17,Washington, DC Metro Area, 38.9072, -77.0369
+16,Twin Cities, MN, 44.9375, -93.2010
+16,Greater Miami Area, FL, 26.3014, -80.6327
+15,Princeton, NJ, 40.3573, -74.6672
+15,Hamilton, ON, 43.2557, -79.8711
+15,Tuscaloosa, AL, 33.2098, -87.5692
+15,Hartford, CT, 41.76, -72.67
+14,Green Bay, WI, 43.87, -91.22
+13,Ottawa, ON, 45.42, -75.69
+13,St. Louis, MO, 38.62, -90.19
+13,Austin, TX, 30.267, -97.74
+12,Ann Arbor, MI, 42.28, -83.74
+12,State College, PA, 40.79, -77.85
+11,Columbus, OH, 39.96, -82.99
+10,Baton Rouge, LA, 30.45, -91.18
+10,Winnipeg, MB, 49.89, -97.13
+10,Baltimore, MD, 39.29, -76.61
+10,Knoxville, TN, 35.96, -83.92
+10,Lincoln, NE, 40.81, -96.70
+10,Columbia, SC, 34.00, -81.03
+9,Cleveland, OH, 41.49, -81.69
+9,Oklahoma City, OK, 35.46, -97.51
+8,Dallas-Fort Worth, TX, 32.70, -96.92
+8,Lexington-Fayette, KY, 38.04, -84.50
+8,Calgary, AB, 51.04, -114.07
+7,Cincinnati, OH, 39.1031, -84.5120
+7,Gainesville, FL, 29.6516, -82.3248
+6,Vancouver, BC, 49.2827, -123.1207
+6,Metro Phoenix, AZ, 33.4982, -112.2384
+6,Statesboro, GA, 32.4488, -81.7832
+6,Houston, TX, 29.7604, -95.3698
+6,Denver, CO, 39.7392, -104.9903
+6,Fargo, ND, 46.8772, -96.7898
+5,Bloomington, IN, 39.1653, -86.5264
+5,East Lansing, MI, 42.7370, -84.4839
+5,Kansas City, MO, 39.0997, -94.5786
+5,Tucson, AZ, 32.2226, -110.9747
+5,Tallahassee, FL, 30.4383, -84.2807
+5,Seattle,WA, 47.6062, -122.3321
+5,San Antonio, TX, 29.4241, -98.4936
+4,Atlanta, GA,33.7490, -84.3880
+4,Regina, SK, 50.4452, -104.6189
+4,Portland Metro Area, OR, 45.6537, -122.5463
+4,Youngstown, OH, 41.0998, -80.6495
+3,West Point, NY, 41.39, -73.95
+3,Ithaca, NY, 42.44, -76.50
+3,College Station, TX, 30.62, -96.33
+3,Champaign-Urbana, IL, 40.1164, -88.24
+3,Kingston, ON, 44.23, -76.48
+3,Stillwater, OK, 36.11, -97.05
+3,Lawrence, KS, 38.97, -95.23
+3,Syracuse, NY, 43.04, -76.14
+3,Milwaukee, WI, 43.03, -87.90
+3,Greenville, SC, 34.85, -82.39
+3,Monroe, LA, 32.50, -92.11
+3,Honolulu, HI, 21.30, -157.58
+3,San Jose-Santa Clara, CA, 37.33, -121.88
+3,Boone, NC, 36.21, -81.67
+3,Corvallis, OR, 44.56, -123.26
+2,Canton, OH, 40.79, -81.37
+2,Sarnia, ON, 42.97, -82.40
+2,Salt Lake City, UT, 40.76, -111.89
+2,Worcester, MA, 42.26, -71.80
+2,Auburn, AL, 32.60, -85.48
+2,Northwest Arkansas, AR, 36.08, -94.17
+2,Richmond, KY, 37.74, -84.29
+2,Louisville, KY, 38.25, -85.75
+2,Athens, GA, 33.95, -83.35
+2,Stockton, CA, 37.95, -121.29
+2,Huntington, WV, 38.41, -82.44
+2,Missoula, MT, 46.87, -113.99
+2,Tampa Bay Area, FL, 27.76, -82.54 
+2,Harrisonburg, VA, 38.4496, -78.8689
+2,Waco, TX, 31.5493, -97.1467
+1,New Brunswick, NJ, 40.4862, -74.4518
+1,Lehigh Valley, NJ-PA, 40.5834, -75.5044
+1,Providence, RI, 41.8240, -71.4128
+1,Eugene, OR, 44.0521, -123.0868
+1,Madison, WI, 43.0731, -89.4012
+1,Cheyenne, WY, 41.1400, -104.8202
+1,Rochester, NY, 43.1566, -77.6088
+1,Columbia, MO, 38.9517, -92.3341
+1,Winston-Salem, NC, 36.0999, -80.2442
+1,Iowa City, IA, 41.6611, -91.5302
+1,Oxford, MS, 34.3668, -89.5186
+1,El Paso, TX, 31.7619, -106.4850
+1,Boise City, ID, 43.6150, -116.2023
+1,Pocatello, ID, 42.8621, -112.4506
+1,Carbondale, IL, 37.7273, -89.2168
+1,Provo, UT, 40.2338, -111.6585
+1,Bozeman, MT, 45.6770, -111.0429
+1,Norfolk, VA, 36.8508, -76.2859
+1,Wichita, KS, 37.6872, -97.3301
+1,Las Vegas, NV, 36.1699, -115.1398
+1,Boulder, CO, 40.0150, -105.2705
+1,Lubbock, TX, 33.5779, -101.8552
+1,Springfield, MA, 42.1015, -72.5898
+1,West Lafayette, IN, 40.4259, -86.9081
+1,Bowling Green, KY, 41.3748, -83.6513
+1,Newark, DE, 39.6837, -75.7497
+1,Indianapolis Metro Area, IN, 39.8362, -86.1752
+1,Fresno, CA, 36.7378, -119.7871
+1,Richmond, VA, 37.5407, -77.4360
+1,New Orleans, LA, 29.9511, -90.0715
+1,Spokane, WA, 47.6588, -117.4260
+1,Nashville, TN, 36.1627, -86.7816
+1,Charlottesville, VA, 38.0293, -78.4767
+1,Myrtle Beach Metro Area, SC, 33.689060, -78.886696

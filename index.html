@@ -58,7 +58,7 @@ var width = 960;
 var height = 500;
 
 // D3 Projection
-var projection = d3.geo.albersUsa()
+var projection = d3.geo.albers()
 				   .translate([width/2, height/2])    // translate to center of screen
 				   .scale([1000]);          // scale things down so see entire US
         
@@ -140,7 +140,7 @@ svg.selectAll("path")
 
 		 
 // Map the cities I have lived in!
-d3.csv("cities-lived.csv", function(data) {
+d3.csv("metro_wins.csv", function(data) {
 
 svg.selectAll("circle")
 	.data(data)
@@ -153,7 +153,7 @@ svg.selectAll("circle")
 		return projection([d.lon, d.lat])[1];
 	})
 	.attr("r", function(d) {
-		return Math.sqrt(d.years) * 4;
+		return Math.sqrt(d.wins) * 2.5;
 	})
 		.style("fill", "rgb(217,91,67)")	
 		.style("opacity", 0.85)	
@@ -164,7 +164,7 @@ svg.selectAll("circle")
     	div.transition()        
       	   .duration(200)      
            .style("opacity", .9);      
-           div.text(d.place)
+           div.text(d.city)
            .style("left", (d3.event.pageX) + "px")     
            .style("top", (d3.event.pageY - 28) + "px");    
 	})   
