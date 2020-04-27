@@ -1,40 +1,40 @@
 metro_area,MLB titles,NHL titles,NBA titles,NFL titles,Total titles
-"Metro Phoenix, AZ",0,0,1,0,1
-"San Francisco Bay Area, CA",7,4,7,0,18
-"New Orleans, LA",1,0,0,0,1
-"Milwaukee, WI",0,1,1,0,2
-"Kansas City, MO",1,0,2,0,3
-"Houston, TX",0,2,1,0,3
-"Edmonton, AB",0,0,0,5,5
-"Baltimore, MD",5,1,3,0,9
-"Dallas-Fort Worth, TX",5,1,0,1,7
-"Denver, CO",3,0,0,2,5
-"Atlanta, GA",0,0,1,0,1
-"Chicago, IL",10,6,6,6,28
-"Montreal, QC",0,0,0,27,27
-"Greater Los Angeles, CA",2,11,6,3,22
-"Syracuse, NY",0,1,0,0,1
-"Portland Metro Area, OR",0,1,0,0,1
-"Greater Philadelphia, PA",5,4,7,2,18
-"Tampa Bay Area, FL",1,0,0,1,2
-"Cincinnati, OH",0,0,5,0,5
+Metro Phoenix, AZ,0,0,1,0,1
+San Francisco Bay Area, CA,7,4,7,0,18
+New Orleans, LA,1,0,0,0,1
+Milwaukee, WI,0,1,1,0,2
+Kansas City, MO,1,0,2,0,3
+Houston, TX,0,2,1,0,3
+Edmonton, AB,0,0,0,5,5
+Baltimore, MD,5,1,3,0,9
+Dallas-Fort Worth, TX,5,1,0,1,7
+Denver, CO,3,0,0,2,5
+Atlanta, GA,0,0,1,0,1
+Chicago, IL,10,6,6,6,28
+Montreal, QC,0,0,0,27,27
+Greater Los Angeles, CA,2,11,6,3,22
+Syracuse, NY,0,1,0,0,1
+Portland Metro Area, OR,0,1,0,0,1
+Greater Philadelphia, PA,5,4,7,2,18
+Tampa Bay Area, FL,1,0,0,1,2
+Cincinnati, OH,0,0,5,0,5
 New York Metro Area,9,2,35,11,57
-"Pittsburgh, PA",6,0,5,5,16
-"Ottawa, ON",0,0,0,3,3
-"Greater Miami Area, FL",2,3,2,0,7
-"Cleveland, OH",6,1,2,0,9
-"Toronto, ON",0,0,2,13,15
-"Metro Detroit, MI",4,3,4,11,22
-"Greater Raleigh, NC",0,0,0,1,1
-"Washington, DC Metro Area",5,1,1,1,8
-"Canton, OH",2,0,0,0,2
-"Calgary, AB",0,0,0,1,1
-"Twin Cities, MN",0,5,2,0,7
-"Providence, RI",1,0,0,0,1
-"Greater Boston, MA",5,17,10,6,38
-"Seattle,WA",1,1,0,0,2
-"San Antonio, TX",0,5,0,0,5
-"Indianapolis Metro Area, IN",1,0,0,0,1
-"Green Bay, WI",14,0,0,0,14
-"Rochester, NY",0,1,0,0,1
-"St. Louis, MO",1,1,11,0,13
+Pittsburgh, PA,6,0,5,5,16
+Ottawa, ON,0,0,0,3,3
+Greater Miami Area, FL,2,3,2,0,7
+Cleveland, OH,6,1,2,0,9
+Toronto, ON,0,0,2,13,15
+Metro Detroit, MI,4,3,4,11,22
+Greater Raleigh, NC,0,0,0,1,1
+Washington, DC Metro Area,5,1,1,1,8
+Canton, OH,2,0,0,0,2
+Calgary, AB,0,0,0,1,1
+Twin Cities, MN,0,5,2,0,7
+Providence, RI,1,0,0,0,1
+Greater Boston, MA,5,17,10,6,38
+Seattle,WA,1,1,0,0,2
+San Antonio, TX,0,5,0,0,5
+Indianapolis Metro Area, IN,1,0,0,0,1
+Green Bay, WI,14,0,0,0,14
+Rochester, NY,0,1,0,0,1
+St. Louis, MO,1,1,11,0,13
