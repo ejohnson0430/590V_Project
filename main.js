@@ -4,17 +4,19 @@ var width = 960;
 var height = 500;
 
 // D3 Projection
-var projection = d3.geo.albers()
+var projection = d3.geoAlbersUsa()
 				   .translate([width/2, height/2])    // translate to center of screen
 				   .scale([1000]);          // scale things down so see entire US
-        
+
+// var projection = d3.geoAlbersUsa().center([81,22]).scale(800).translate([width/2,height/2]);
+ 
 // Define path generator
-var path = d3.geo.path()               // path generator that will convert GeoJSON to SVG paths
+var path = d3.geoPath()               // path generator that will convert GeoJSON to SVG paths
 		  	 .projection(projection);  // tell path generator to use albersUsa projection
 
 		
 // Define linear scale for output
-var color = d3.scale.linear()
+var color = d3.scaleLinear()
 			  .range(["rgb(211,211,211)","rgb(211,211,211)","rgb(211,211,211)","rgb(211,211,211)"]);
 
 // var legendText = ["Cities Lived", "States Lived", "States Visited", "Nada"];
@@ -84,43 +86,88 @@ svg.selectAll("path")
 	}
 });
 
+var g2 = svg.append("g")
+
+var arc = d3.arc()
+		.innerRadius(0)
+		.outerRadius(30)
+
+var pie = d3.pie()
+		.sort(null)
+		.value(function(d) {return d;})
+
+var pieColor = d3.schemeCategory10;
+
+d3.csv("titles_by_sport.csv", function(data){
+	var points = g2.selectAll("g")
+		.data(data)
+		.enter()
+		.append("g")
+		.attr("transform",function(d) { return "translate("+projection([d.lon,d.lat])+")" })
+		.attr("id", function (d,i) { return "chart"+i; })
+		.attr("wins", function(d) {return [0, d.mlb, d.nfl, d.nba, d.nhl]; })
+		.append("g").attr("class","pies");
+
+	// Add a circle to it if needed
+	points.append("circle")
+		.attr("r", 0.50)
+        .style("fill", "red");
+
+    // Select each g element we created, and fill it with pie chart:
+	var pies = points.selectAll(".pies")
+		.data(function(d) {return pie([d.mlb, d.nhl, d.nba, d.nfl]); }) // I'm unsure why I need the leading 0.
+		.enter()
+		.append('g')
+		.attr('class','arc');
+	
+	pies.append("path")
+	  .attr('d',arc)
+      .attr("fill",function(d,i){
+           return pieColor[i];      
+      });
+
+});
+
+
+
+
 		 
-// Map the cities I have lived in!
-d3.csv("metro_wins.csv", function(data) {
-	svg.selectAll("circle")
-	.data(data)
-	.enter()
-	.append("circle")
-	.attr("cx", function(d) {
-		return projection([d.lon, d.lat])[0];
-	})
-	.attr("cy", function(d) {
-		return projection([d.lon, d.lat])[1];
-	})
-	.attr("r", function(d) {
-		return Math.sqrt(d.wins) * 2.5;
-	})
-		.style("fill", "rgb(217,91,67)")	
-		.style("opacity", 0.85)	
+// // Map the cities I have lived in!
+// d3.csv("metro_wins.csv", function(data) {
+// 	svg.selectAll("circle")
+// 	.data(data)
+// 	.enter()
+// 	.append("circle")
+// 	.attr("cx", function(d) {
+// 		return projection([d.lon, d.lat])[0];
+// 	})
+// 	.attr("cy", function(d) {
+// 		return projection([d.lon, d.lat])[1];
+// 	})
+// 	.attr("r", function(d) {
+// 		return Math.sqrt(d.wins) * 2.5;
+// 	})
+// 		.style("fill", "rgb(217,91,67)")	
+// 		.style("opacity", 0.85)	
 
-	// Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
-	// http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
-	.on("mouseover", function(d) {      
-    	div.transition()        
-      	   .duration(200)      
-           .style("opacity", .9);      
-           div.text(d.city)
-           .style("left", (d3.event.pageX) + "px")     
-           .style("top", (d3.event.pageY - 28) + "px");    
-	})   
+// 	// Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
+// 	// http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
+// 	.on("mouseover", function(d) {      
+//     	div.transition()        
+//       	   .duration(200)      
+//            .style("opacity", .9);      
+//            div.text(d.city)
+//            .style("left", (d3.event.pageX) + "px")     
+//            .style("top", (d3.event.pageY - 28) + "px");    
+// 	})   
 
-    // fade out tooltip on mouse out               
-    .on("mouseout", function(d) {       
-        div.transition()        
-           .duration(500)      
-           .style("opacity", 0);   
-    });
-});  
+//     // fade out tooltip on mouse out               
+//     .on("mouseout", function(d) {       
+//         div.transition()        
+//            .duration(500)      
+//            .style("opacity", 0);   
+//     });
+// });  
 
 // Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
 var legend = d3.select("body").append("svg")
