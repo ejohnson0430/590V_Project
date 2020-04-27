@@ -1,4 +1,4 @@
-metro_area,mlb,nfl,nhl,nba,total
+city,state,lat,lon,mlb,nfl,nhl,nba,total
 San Francisco Bay Area, CA,37.8272,-122.2913,7,7,0,4,18
 Greater Boston, MA,42.3601,-71.0588,10,5,6,17,38
 Dallas-Fort Worth, TX,32.7,-96.92,0,5,1,1,7
