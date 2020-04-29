@@ -5,7 +5,7 @@ var height = 800;
 // D3 Projection
 var projection = d3.geo.albersUsa()
 				   .translate([width/2, height/2])    // translate to center of screen
-				   .scale([1500]);          // scale things down so see entire US
+				   .scale([1650]);          // scale things down so see entire US
         
 // Define path generator
 var path = d3.geo.path()               // path generator that will convert GeoJSON to SVG paths
