@@ -1,35 +1,35 @@
-city,state,lat,lon,mlb,nfl,nhl,nba,total
-San Francisco Bay Area, CA,37.8272,-122.2913,7,7,0,4,18
-Greater Boston, MA,42.3601,-71.0588,10,5,6,17,38
-Dallas-Fort Worth, TX,32.7,-96.92,0,5,1,1,7
-Green Bay, WI,43.87,-91.22,0,14,0,0,14
-Indianapolis Metro Area, IN,39.8362,-86.1752,0,1,0,0,1
-St. Louis, MO,38.62,-90.19,11,1,0,1,13
-Metro Detroit, MI,42.3314,-83.0458,4,4,11,3,22
-Cleveland, OH,41.49,-81.69,2,6,0,1,9
-Denver, CO,39.7392,-104.9903,0,3,2,0,5
-Tampa Bay Area, FL,27.76,-82.54,0,1,1,0,2
-Canton, OH,40.79,-81.37,0,2,0,0,2
-Cincinnati, OH,39.1031,-84.512,5,0,0,0,5
-Providence, RI,41.824,-71.4128,0,1,0,0,1
-New York Metro Area, NY,40.7128,-74.006,35,9,11,2,57
-Twin Cities, MN,44.9375,-93.201,2,0,0,5,7
-Pittsburgh, PA,40.4406,-79.9959,5,6,5,0,16
-San Antonio, TX,29.4241,-98.4936,0,0,0,5,5
-Chicago, IL,41.8781,-87.6298,6,10,6,6,28
-Seattle,WA,47.6062,-122.3321,0,1,0,1,2
-Greater Miami Area, FL,26.3014,-80.6327,2,2,0,3,7
-New Orleans, LA,29.9511,-90.0715,0,1,0,0,1
-Rochester, NY,43.1566,-77.6088,0,0,0,1,1
-Syracuse, NY,43.04,-76.14,0,0,0,1,1
-Houston, TX,29.7604,-95.3698,1,0,0,2,3
-Baltimore, MD,39.29,-76.61,3,5,0,1,9
-Metro Phoenix, AZ,33.4982,-112.2384,1,0,0,0,1
-Portland Metro Area, OR,45.6537,-122.5463,0,0,0,1,1
-Washington, DC Metro Area,38.9072,-77.0369,1,5,1,1,8
-Milwaukee, WI,43.03,-87.9,1,0,0,1,2
-Kansas City, MO,39.0997,-94.5786,2,1,0,0,3
-Greater Philadelphia, PA,39.9526,-75.1652,7,5,2,4,18
-Greater Raleigh, NC,35.7743,-78.6388,0,0,1,0,1
-Greater Los Angeles, CA,33.8726,-118.2848,6,2,3,11,22
-Atlanta, GA,33.749,-84.388,1,0,0,0,1
+city,state,lat,lon,mlb,nfl,nhl,nba,total,population
+San Francisco Bay Area, CA,37.8272,-122.2913,7,7,0,4,18,4727357
+Greater Boston, MA,42.3601,-71.0588,10,5,6,17,38,4836531
+Dallas-Fort Worth, TX,32.7,-96.92,0,5,1,1,7,7399662
+Green Bay, WI,43.87,-91.22,0,14,0,0,14,320050
+Indianapolis Metro Area, IN,39.8362,-86.1752,0,1,0,0,1,2028614
+St. Louis, MO,38.62,-90.19,11,1,0,1,13,2807338
+Metro Detroit, MI,42.3314,-83.0458,4,4,11,3,22,4313002
+Cleveland, OH,41.49,-81.69,2,6,0,1,9,2058844
+Denver, CO,39.7392,-104.9903,0,3,2,0,5,2888227
+Tampa Bay Area, FL,27.76,-82.54,0,1,1,0,2,3091399
+Canton, OH,40.79,-81.37,0,2,0,0,2,399927
+Cincinnati, OH,39.1031,-84.512,5,0,0,0,5,2179082
+Providence, RI,41.824,-71.4128,0,1,0,0,1,1621122
+New York Metro Area, NY,40.7128,-74.006,35,9,11,2,57,20320876
+Twin Cities, MN,44.9375,-93.201,2,0,0,5,7,3600618
+Pittsburgh, PA,40.4406,-79.9959,5,6,5,0,16,2333367
+San Antonio, TX,29.4241,-98.4936,0,0,0,5,5,2473974
+Chicago, IL,41.8781,-87.6298,6,10,6,6,28,9533040
+Seattle,WA,47.6062,-122.3321,0,1,0,1,2,3867046
+Greater Miami Area, FL,26.3014,-80.6327,2,2,0,3,7,6158824
+New Orleans, LA,29.9511,-90.0715,0,1,0,0,1,1275762
+Rochester, NY,43.1566,-77.6088,0,0,0,1,1,1077948
+Syracuse, NY,43.04,-76.14,0,0,0,1,1,654841
+Houston, TX,29.7604,-95.3698,1,0,0,2,3,6892427
+Baltimore, MD,39.29,-76.61,3,5,0,1,9,2808175
+Metro Phoenix, AZ,33.4982,-112.2384,1,0,0,0,1,4737270
+Portland Metro Area, OR,45.6537,-122.5463,0,0,0,1,1,2453168
+Washington, DC Metro Area,38.9072,-77.0369,1,5,1,1,8,6216589
+Milwaukee, WI,43.03,-87.9,1,0,0,1,2,1576236
+Kansas City, MO,39.0997,-94.5786,2,1,0,0,3,2128912
+Greater Philadelphia, PA,39.9526,-75.1652,7,5,2,4,18,6096120
+Greater Raleigh, NC,35.7743,-78.6388,0,0,1,0,1,567428
+Greater Los Angeles, CA,33.8726,-118.2848,6,2,3,11,22,13353907
+Atlanta, GA,33.749,-84.388,1,0,0,0,1,5884736
