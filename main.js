@@ -110,20 +110,15 @@ d3.csv("stateslived.csv", function(data) {
 	      	pie.enter().append('g')
 		        .attr('class', '.pie')
 	    		.attr("fill", "red")
-				.attr("transform",function(d) { return "translate("+projection([d.lon,d.lat])+")" })
-				.on("mouseover", function(d) {      
-					div.transition()      
-			      	   .duration(200)      
-			           .style("opacity", .9);      
-			           div.text(d.city + ", Population: " + d.population)
-			           .style("left", (d3.event.pageX ) + "px")     
-					   .style("top", (d3.event.pageY - 28) + "px");
-				})   
-			    .on("mouseout", function(d) {       
-		        div.transition()        
-		           .duration(500)      
-		           .style("opacity", 0);   
-			    });
+				.attr("transform",function(d) { return "translate("+projection([d.lon,d.lat])+")" });
+
+			/*
+			bar.append("text")
+				.attr("x", function(d) { return x(d) - 3; })
+				.attr("y", barHeight / 2)
+				.attr("dy", ".35em")
+				.text(function(d) { return d; });
+			*/
 
 			pie.append("circle")
 				.attr("r", 0.5)
@@ -134,14 +129,28 @@ d3.csv("stateslived.csv", function(data) {
 
 	      	var g = pie.selectAll('g')
 		        .data(function(d) {
-		        	var pieSize = parseInt(d.total);
+					var city = d.city;
+		        	var pieSize = Math.log(parseInt(d.total)+1)*5;
 		        	var wins = [parseInt(d.mlb), parseInt(d.nfl), parseInt(d.nhl), parseInt(d.nba)]
-		        	wins = wins.map(function(t) { return {wins: t, pieSize: pieSize}; });
+		        	wins = wins.map(function(t) { return {wins: t, pieSize: pieSize, city: city, population: d.population}; });
 		         	return pieData(wins);
 		        });
 
       		g.enter().append('g') // create g elements inside each pie
-        		.attr('class', 'arc')
+				.attr('class', 'arc')
+				.on("mouseover", function(d,i) {      
+					div.transition()      
+			      	   .duration(200)      
+			           .style("opacity", .9);      
+			           div.text(d.data.city +" "+ legendText[i] + " wins: " + d.data.wins + " \n Population: " + parseFloat(d.data.population / 1000000).toFixed(1) + "M")
+			           .style("left", (d3.event.pageX ) + "px")     
+					   .style("top", (d3.event.pageY - 28) + "px");
+				})   
+			    .on("mouseout", function(d) {       
+		        div.transition()        
+		           .duration(500)      
+		           .style("opacity", 0);   
+			    });
 
       		var arc = d3.svg.arc()
         		.outerRadius(function (d) {
@@ -151,7 +160,7 @@ d3.csv("stateslived.csv", function(data) {
 
 	 	    g.append('path')
 	        	.attr("fill", function(d, i) { return pieColor(i); } )
-	        	.attr('d', arc)
+				.attr('d', arc)
 		});
 
 		// Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
