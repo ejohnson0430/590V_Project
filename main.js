@@ -105,12 +105,12 @@ d3.csv("stateslived.csv", function(data) {
 				.attr("id", function (d,i) { return "chart"+i; })
 				.append("g").attr("class","pies")
 				.on("mouseover", function(d) {      
-			    	div.transition()        
+					div.transition()      
 			      	   .duration(200)      
 			           .style("opacity", .9);      
-			           div.text(d.city)
-			           .style("left", (d3.event.pageX) + "px")     
-			           .style("top", (d3.event.pageY - 28) + "px");    
+			           div.text(d.city + ", Population: " + d.population)
+			           .style("left", (d3.event.pageX ) + "px")     
+					   .style("top", (d3.event.pageY - 28) + "px");
 				})   
 			    .on("mouseout", function(d) {       
 		        div.transition()        
