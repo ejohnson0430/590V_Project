@@ -1,21 +1,35 @@
-		
 //Width and height of map
-var width = 960;
-var height = 500;
+var width = 1500;
+var height = 800;
 
 // D3 Projection
-var projection = d3.geoAlbersUsa()
+var projection = d3.geo.albersUsa()
 				   .translate([width/2, height/2])    // translate to center of screen
-				   .scale([1000]);          // scale things down so see entire US
-
+				   .scale([1500]);          // scale things down so see entire US
+        
 // Define path generator
-var path = d3.geoPath()               // path generator that will convert GeoJSON to SVG paths
+var path = d3.geo.path()               // path generator that will convert GeoJSON to SVG paths
 		  	 .projection(projection);  // tell path generator to use albersUsa projection
 
 		
 // Define linear scale for output
-var color = d3.scaleLinear()
+var color = d3.scale.linear()
 			  .range(["rgb(211,211,211)","rgb(211,211,211)","rgb(211,211,211)","rgb(211,211,211)"]);
+
+
+// // D3 Projection
+// var projection = d3.geoAlbersUsa()
+// 				   .translate([width/2, height/2])    // translate to center of screen
+// 				   .scale([1500]);          // scale things down so see entire US
+
+// // Define path generator
+// var path = d3.geoPath()               // path generator that will convert GeoJSON to SVG paths
+// 		  	 .projection(projection);  // tell path generator to use albersUsa projection
+
+		
+// // Define linear scale for output
+// var color = d3.scaleLinear()
+// 			  .range(["rgb(211,211,211)","rgb(211,211,211)","rgb(211,211,211)","rgb(211,211,211)"]);
 
 var legendText = ["MLB", "NFL", "NHL", "NBA"];
 
@@ -84,67 +98,48 @@ d3.csv("stateslived.csv", function(data) {
 				}
 			});
 
-		var g2 = svg.append("g")
 
-		var pie = d3.pie()
-				.sort(null)
-				.value(function(d) {return d;})
-
-		// var pieColor = d3.schemeCategory10;
-
-		var pieColor = d3.scaleOrdinal(d3.schemeCategory10);
+	    var pieColor = d3.scale.category10();
 		pieColor.domain([0, 1, 2, 3])
 
-
 		d3.csv("titles_by_sport.csv", function(data){
-			var points = g2.selectAll("g")
-				.data(data)
-				.enter()
-				.append("g")
-				.attr("transform",function(d) { return "translate("+projection([d.lon,d.lat])+")" })
-				.attr("id", function (d,i) { return "chart"+i; })
-				.append("g").attr("class","pies")
-				.on("mouseover", function(d) {      
-			    	div.transition()        
-			      	   .duration(200)      
-			           .style("opacity", .9);      
-			           div.text(d.city)
-			           .style("left", (d3.event.pageX) + "px")     
-			           .style("top", (d3.event.pageY - 28) + "px");    
-				})   
-			    .on("mouseout", function(d) {       
-		        div.transition()        
-		           .duration(500)      
-		           .style("opacity", 0);   
-			    })
 
-			// Add a circle to it if needed
-			points.append("circle")
-				.attr("r", 0.50)
+			var pie = svg.selectAll('.pie')
+        		.data(data);
+
+	      	pie.enter().append('g')
+		        .attr('class', '.pie')
+	    		.attr("fill", "red")
+				.attr("transform",function(d) { return "translate("+projection([d.lon,d.lat])+")" })
+
+			pie.append("circle")
+				.attr("r", 0.5)
 		        .style("fill", "red");
 
-		    // Select each g element we created, and fill it with pie chart:
-			var pies = points.selectAll(".pies")
-				.data(function(d) {return pie([d.mlb, d.nfl, d.nhl, d.nba]); }) // I'm unsure why I need the leading 0.
-				.enter()
-				.append('g')
-				.attr('class','arc');
+		    var pieData = d3.layout.pie()
+          		.value(function(d) { return d.wins; });
 
-			var arc = d3.arc()
-				.innerRadius(0)
-				.outerRadius(function(d) {
-					console.log(d);
-					return 10;
-				});
-			
-			pies.append("path")
-			  .attr('d',arc)
-			  .attr("data-legend", function(d) { return d.index; })
-		      .attr("fill",function(d,i){
-		      		return pieColor(d.index);
-		      });
+	      	var g = pie.selectAll('g')
+		        .data(function(d) {
+		        	var pieSize = parseInt(d.total);
+		        	var wins = [parseInt(d.mlb), parseInt(d.nfl), parseInt(d.nhl), parseInt(d.nba)]
+		        	wins = wins.map(function(t) { return {wins: t, pieSize: pieSize}; });
+		         	return pieData(wins);
+		        });
+
+      		g.enter().append('g') // create g elements inside each pie
+        		.attr('class', 'arc')
+
+      		var arc = d3.svg.arc()
+        		.outerRadius(function (d) {
+          			return Math.sqrt(d.data.pieSize) * 3.5
+        		})
+        		.innerRadius(0);
+
+	 	    g.append('path')
+	        	.attr("fill", function(d, i) { return pieColor(i); } )
+	        	.attr('d', arc);
 		});
-
 
 		// Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
 		var legend = d3.select("body").append("svg")
