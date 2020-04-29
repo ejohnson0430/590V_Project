@@ -14,7 +14,7 @@ var path = d3.geo.path()               // path generator that will convert GeoJS
 		
 // Define linear scale for output
 var color = d3.scale.linear()
-			  .range(["rgb(211,211,211)","rgb(211,211,211)","rgb(211,211,211)","rgb(211,211,211)"]);
+			  .range(["rgb(213,222,217)","rgb(213,222,217)","rgb(213,222,217)","rgb(213,222,217)"]);
 
 
 // // D3 Projection
@@ -38,7 +38,7 @@ var svg = d3.select("body")
 			.append("svg")
 			.attr("width", width)
 			.attr("height", height);
-        
+
 // Append Div for tooltip to SVG
 var div = d3.select("body")
 		    .append("div")   

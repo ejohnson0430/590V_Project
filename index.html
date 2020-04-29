@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <meta charset="utf-8">
 <script src="https://d3js.org/d3-geo.v1.min.js"></script>
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <style type="text/css">
+
+body {
+	background: aliceblue;	
+}
 
 /* On mouse hover, lighten state color */
 path:hover {
@@ -25,6 +30,8 @@ div.tooltip {
 	pointer-events: none;
 }
 
+
+
 /* Legend Font Style */
 body m
 	font: 11px sans-serif;
@@ -33,8 +40,13 @@ body m
 /* Legend Position Style */
 .legend {
 	position:absolute;
-	left:800px;
+	left:300px;
 	top:350px;
+}
+
+.display-4 {
+	display: block;
+	margin-top: 1%;
 }
 
 /*svg{
@@ -45,6 +57,8 @@ body m
 </style>
 </head>
 <body>
+
+<center><h1 class="display-4">Winningest Cities Across US</h1></center>
 <script src="main.js"></script>
 </body>
 </html>
