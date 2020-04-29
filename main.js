@@ -111,6 +111,19 @@ d3.csv("stateslived.csv", function(data) {
 		        .attr('class', '.pie')
 	    		.attr("fill", "red")
 				.attr("transform",function(d) { return "translate("+projection([d.lon,d.lat])+")" })
+				.on("mouseover", function(d) {      
+			    	div.transition()        
+			      	   .duration(200)      
+			           .style("opacity", .9);      
+			           div.text(d.city)
+			           .style("left", (d3.event.pageX) + "px")     
+			           .style("top", (d3.event.pageY - 28) + "px");    
+				})   
+			    .on("mouseout", function(d) {       
+		        div.transition()        
+		           .duration(500)      
+		           .style("opacity", 0);   
+			    });
 
 			pie.append("circle")
 				.attr("r", 0.5)
@@ -138,7 +151,7 @@ d3.csv("stateslived.csv", function(data) {
 
 	 	    g.append('path')
 	        	.attr("fill", function(d, i) { return pieColor(i); } )
-	        	.attr('d', arc);
+	        	.attr('d', arc)
 		});
 
 		// Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
