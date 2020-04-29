@@ -17,7 +17,7 @@ var path = d3.geoPath()               // path generator that will convert GeoJSO
 var color = d3.scaleLinear()
 			  .range(["rgb(211,211,211)","rgb(211,211,211)","rgb(211,211,211)","rgb(211,211,211)"]);
 
-var legendText = ["MLB", "NHL", "NBA", "NFL"];
+var legendText = ["MLB", "NFL", "NHL", "NBA"];
 
 //Create SVG element and append map to the SVG
 var svg = d3.select("body")
@@ -112,7 +112,7 @@ d3.csv("titles_by_sport.csv", function(data){
 
     // Select each g element we created, and fill it with pie chart:
 	var pies = points.selectAll(".pies")
-		.data(function(d) {return pie([d.mlb, d.nhl, d.nba, d.nfl]); }) // I'm unsure why I need the leading 0.
+		.data(function(d) {return pie([d.mlb, d.nfl, d.nhl, d.nba]); }) // I'm unsure why I need the leading 0.
 		.enter()
 		.append('g')
 		.attr('class','arc');
@@ -126,6 +126,7 @@ d3.csv("titles_by_sport.csv", function(data){
 	
 	pies.append("path")
 	  .attr('d',arc)
+	  .attr("data-legend", function(d) { return d.index; })
       .attr("fill",function(d,i){
       		return pieColor(d.index);
       });
@@ -172,13 +173,14 @@ d3.csv("titles_by_sport.csv", function(data){
 //     });
 // });  
 
+
 // Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
 var legend = d3.select("body").append("svg")
       			.attr("class", "legend")
      			.attr("width", 140)
     			.attr("height", 200)
    				.selectAll("g")
-   				.data(pieColor.domain().slice().reverse())
+   				.data(pieColor.domain().slice())
    				.enter()
    				.append("g")
      			.attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
