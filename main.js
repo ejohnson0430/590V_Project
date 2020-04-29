@@ -8,8 +8,6 @@ var projection = d3.geoAlbersUsa()
 				   .translate([width/2, height/2])    // translate to center of screen
 				   .scale([1000]);          // scale things down so see entire US
 
-// var projection = d3.geoAlbersUsa().center([81,22]).scale(800).translate([width/2,height/2]);
- 
 // Define path generator
 var path = d3.geoPath()               // path generator that will convert GeoJSON to SVG paths
 		  	 .projection(projection);  // tell path generator to use albersUsa projection
@@ -19,7 +17,7 @@ var path = d3.geoPath()               // path generator that will convert GeoJSO
 var color = d3.scaleLinear()
 			  .range(["rgb(211,211,211)","rgb(211,211,211)","rgb(211,211,211)","rgb(211,211,211)"]);
 
-// var legendText = ["Cities Lived", "States Lived", "States Visited", "Nada"];
+var legendText = ["MLB", "NHL", "NBA", "NFL"];
 
 //Create SVG element and append map to the SVG
 var svg = d3.select("body")
@@ -88,15 +86,15 @@ svg.selectAll("path")
 
 var g2 = svg.append("g")
 
-var arc = d3.arc()
-		.innerRadius(0)
-		.outerRadius(30)
-
 var pie = d3.pie()
 		.sort(null)
 		.value(function(d) {return d;})
 
-var pieColor = d3.schemeCategory10;
+// var pieColor = d3.schemeCategory10;
+
+var pieColor = d3.scaleOrdinal(d3.schemeCategory10);
+pieColor.domain([0, 1, 2, 3])
+
 
 d3.csv("titles_by_sport.csv", function(data){
 	var points = g2.selectAll("g")
@@ -105,7 +103,6 @@ d3.csv("titles_by_sport.csv", function(data){
 		.append("g")
 		.attr("transform",function(d) { return "translate("+projection([d.lon,d.lat])+")" })
 		.attr("id", function (d,i) { return "chart"+i; })
-		.attr("wins", function(d) {return [0, d.mlb, d.nfl, d.nba, d.nhl]; })
 		.append("g").attr("class","pies");
 
 	// Add a circle to it if needed
@@ -119,13 +116,19 @@ d3.csv("titles_by_sport.csv", function(data){
 		.enter()
 		.append('g')
 		.attr('class','arc');
+
+	var arc = d3.arc()
+		.innerRadius(0)
+		.outerRadius(function(d) {
+			console.log(d);
+			return 10;
+		});
 	
 	pies.append("path")
 	  .attr('d',arc)
       .attr("fill",function(d,i){
-           return pieColor[i];      
+      		return pieColor(d.index);
       });
-
 });
 
 
@@ -175,15 +178,15 @@ var legend = d3.select("body").append("svg")
      			.attr("width", 140)
     			.attr("height", 200)
    				.selectAll("g")
-   				.data(color.domain().slice().reverse())
+   				.data(pieColor.domain().slice().reverse())
    				.enter()
    				.append("g")
      			.attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
-  	// legend.append("rect")
-   // 		  .attr("width", 18)
-   // 		  .attr("height", 18)
-   // 		  .style("fill", color);
+  	legend.append("rect")
+   		  .attr("width", 18)
+   		  .attr("height", 18)
+   		  .style("fill", pieColor);
 
   	legend.append("text")
   		  .data(legendText)
