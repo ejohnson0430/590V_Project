@@ -142,7 +142,7 @@ d3.csv("stateslived.csv", function(data) {
 					div.transition()      
 			      	   .duration(200)      
 			           .style("opacity", .9);      
-			           div.text(d.data.city +" "+ legendText[i] + " wins: " + d.data.wins + " \n Population: " + parseFloat(d.data.population / 1000000).toFixed(1) + "M")
+			           div.text(d.data.city + " " + legendText[i] + " wins: " + d.data.wins + " \n Population: " + parseFloat(d.data.population / 1000000).toFixed(1) + "M")
 			           .style("left", (d3.event.pageX ) + "px")     
 					   .style("top", (d3.event.pageY - 28) + "px");
 				})   
